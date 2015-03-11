@@ -4,13 +4,13 @@
 
 Summary: Download utility with BitTorrent and Metalink support
 Name: aria2
-Version: 1.16.4
+Version: 1.18.10
 Release: 1%{?dist}
 License: GPL
 Group: Applications/Internet
 URL: http://aria2.sourceforge.net/
 
-Source: http://dl.sf.net/aria2/aria2-%{version}.tar.bz2
+Source: http://downloads.sf.net/project/aria2/stable/aria2-%{version}/aria2-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires: boost >= 1.34
@@ -36,10 +36,8 @@ Supported protocols are HTTP/HTTPS/FTP/BitTorrent/Metalink.
 %{__make} %{?_smp_mflags}
 
 %install
-%{__rm} -rf %{buildroot}
-%{__make} install DESTDIR="%{buildroot}"
-%find_lang aria2
-
+%make_install
+%find_lang aria2 --with-man
 %{__mv} -v %{buildroot}%{_docdir}/aria2 _rpmdocs
 
 %clean
@@ -51,8 +49,17 @@ Supported protocols are HTTP/HTTPS/FTP/BitTorrent/Metalink.
 %doc %{_mandir}/man1/aria2c.1*
 %doc %{_mandir}/*/man1/aria2c.1*
 %{_bindir}/aria2c
+%{_datadir}/doc
+%{_datadir}/locale
 
 %changelog
+<<<<<<< HEAD
+* Wed Mar 11 2015 Derrick Hammer <derrick@derrickhammer.com> - 1.18.10-1
+- Updated to release 1.18.10.
+- Fixed source URL due to sourceforge file url structure changes
+- Updated macros
+- Added new files to %files macro
+
 * Wed Mar 20 2013 Dag Wieers <dag@wieers.com> - 1.16.4-1
 - Updated to release 1.16.4.
 

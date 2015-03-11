@@ -53,7 +53,6 @@ Supported protocols are HTTP/HTTPS/FTP/BitTorrent/Metalink.
 %{_datadir}/locale
 
 %changelog
-<<<<<<< HEAD
 * Wed Mar 11 2015 Derrick Hammer <derrick@derrickhammer.com> - 1.18.10-1
 - Updated to release 1.18.10.
 - Fixed source URL due to sourceforge file url structure changes
